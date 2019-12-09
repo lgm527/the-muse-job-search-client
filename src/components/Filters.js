@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import LevelFilters from './LevelFilters';
 import CompanyFilters from './CompanyFilters';
+import LocationFilters from './LocationFilters';
 
 export default class Filters extends Component {
 
@@ -23,6 +24,8 @@ export default class Filters extends Component {
       <LevelFilters handleFilters={ this.handleFilters } />
 
       <CompanyFilters jobs={ this.props.jobs } handleFilters={ this.handleFilters } />
+
+      <LocationFilters jobs={ this.props.jobs } handleFilters={ this.handleFilters } />
 
       </div>
     )
