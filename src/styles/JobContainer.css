@@ -1,0 +1,16 @@
+.jobContainer {
+  padding: 1em;
+  float: right;
+  width: 100%;
+}
+
+.jobCard {
+  margin: 1em;
+  padding: 1em;
+  border: solid 5px gray;
+  border-radius: .5em;
+}
+
+#details {
+  float: right;
+}

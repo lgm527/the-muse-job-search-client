@@ -1,0 +1,12 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.boxes {
+  width: 100%;
+  height: 8em;
+  overflow-y: scroll;
+}

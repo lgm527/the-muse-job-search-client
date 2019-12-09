@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Checkbox from './Checkbox';
+import '../styles/Filters.css';
 
 export default class CompanyFilters extends Component {
 
@@ -61,9 +62,11 @@ export default class CompanyFilters extends Component {
 
   render() {
     return(
-      <div>
-      Companies:
-      { this.createCheckboxes(this.companyOPTIONS()) }
+      <div className='company'>
+      <h4>Companies:</h4>
+        <div className='boxes'>
+          { this.createCheckboxes(this.companyOPTIONS()) }
+        </div>
       <button onClick={ (event) => this.handleCompaniesFilter(event) }>Submit</button>
       </div>
     )

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Checkbox from './Checkbox';
+import '../styles/Filters.css';
 
 export default class CategoriesFilters extends Component {
 
@@ -68,9 +69,11 @@ export default class CategoriesFilters extends Component {
 
   render() {
     return(
-      <div>
-      Categories:
-      { this.createCheckboxes(this.categoryOPTIONS()) }
+      <div className='category'>
+      <h4>Categories:</h4>
+        <div className='boxes'>
+          { this.createCheckboxes(this.categoryOPTIONS()) }
+        </div>
       <button onClick={ (event) => this.handleCategoriesFilter(event) }>Submit</button>
       </div>
     )

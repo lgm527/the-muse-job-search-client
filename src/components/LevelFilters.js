@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Checkbox from './Checkbox';
+import '../styles/Filters.css';
 
 const LEVELOPTIONS = ["Internship", "Entry Level", "Junior", "Mid-level", "Senior", "Management"];
 
@@ -51,9 +52,11 @@ export default class LevelFilters extends Component {
 
   render() {
     return(
-      <div>
-      Levels:
-      { this.createCheckboxes(LEVELOPTIONS) }
+      <div className='levels'>
+      <h4>Levels:</h4>
+        <div className='boxes'>
+          { this.createCheckboxes(LEVELOPTIONS) }
+        </div>
       <button onClick={ (event) => this.handleLevelsFilter(event) }>Submit</button>
       </div>
     )

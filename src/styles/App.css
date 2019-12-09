@@ -1,0 +1,51 @@
+.App {
+  text-align: left;
+  width: 100%;
+  clear: both;
+}
+
+#logo {
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#searching, #filtering {
+  display: flex;
+  flex-direction: column;
+}
+
+#resetBtn {
+  width: 50%;
+}
+
+#clear {
+  clear: both;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  position: fixed;
+  margin-top: 0;
+  width: 100%;
+  padding: 1em;
+  z-index: 2;
+}
+
+.userInput {
+  margin-top: 4.5em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  float: left;
+  width: 13%;
+  overflow: scroll;
+  z-index: 2;
+}
+
+.jobs {
+  padding-top: 5em;
+  width: 80%;
+  float: right;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import '../styles/JobContainer.css';
 
 class JobCard extends React.Component {
 
@@ -20,7 +21,11 @@ class JobCard extends React.Component {
     const shortDescription = description.slice(0, 99).concat('...');
 
     return(
-      <div>
+      <div className='jobCard'>
+      <button
+      onClick={ () => this.handleDetailToggle() }
+      id='details'>
+      { this.state.showDetails ? '-' : '+' }</button>
       {
         this.state.showDetails ?
         <div>
@@ -29,15 +34,6 @@ class JobCard extends React.Component {
            { location }
            { ReactHtmlParser(description) }
            { url }
-           <br></br>
-           <br></br>
-           <button onClick={ () => this.handleDetailToggle() }>
-           { this.state.showDetails ? '-' : '+' }</button>
-           <br></br>
-            ---------------------
-            <br></br>
-            ---------------------
-            <br></br>
         </div>
         :
         <div>
@@ -45,15 +41,6 @@ class JobCard extends React.Component {
            { title } <br></br>
            { location }
            { ReactHtmlParser(shortDescription) }
-           <br></br>
-           <br></br>
-           <button onClick={ () => this.handleDetailToggle() }>
-           { this.state.showDetails ? '-' : '+' }</button>
-           <br></br>
-            ---------------------
-            <br></br>
-            ---------------------
-            <br></br>
         </div>
       }
       </div>

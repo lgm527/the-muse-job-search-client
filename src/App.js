@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
 import Search from './components/Search';
 import Filters from './components/Filters';
 import JobContainer from './containers/JobContainer';
@@ -49,6 +49,18 @@ class App extends React.Component {
     let filteredJobs = []
      termsArr.forEach((term) => {
       return this.state.jobs.filter(job => {
+        if (job[filter] === term) {
+          filteredJobs.push(job);
+        }
+      })
+    })
+    this.setState({ jobs: filteredJobs, filter: termsArr })
+  }
+
+  updateCategoryFilter = (filter, termsArr) => {
+    let filteredJobs = []
+     termsArr.forEach((term) => {
+      return this.state.jobs.filter(job => {
         if (this.cleanUpCategoryData(job[filter]) === term) {
           filteredJobs.push(job);
         }
@@ -65,25 +77,35 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+
         <header className="App-header">
-          <b>the</b>muse
-          <button onClick={ () => this.resetList() }>Reset Search</button>
+          <span id='logo'><b>the</b>muse</span>
         </header>
 
-        <Search updateSearchTerm={ this.updateSearchTerm } />
+        <div className='userInput'>
+          <div id='searching'>
+          <Search updateSearchTerm={ this.updateSearchTerm } />
+          <p>There are { this.state.jobs ? this.state.jobs.length : 'none' } result(s).</p>
+          <button id='resetBtn' onClick={ () => this.resetList() }>Reset Search</button>
+          </div>
 
-        There are { this.state.jobs ? this.state.jobs.length : 'none' } result(s).
+          <div id='filtering'>
+          <Filters
+          updateFilters={ this.updateFilters }
+          jobs={ this.state.jobs }
+          cleanUpCategoryData={ this.cleanUpCategoryData }
+          updateCategoryFilter={ this.updateCategoryFilter } />
+          </div>
+        </div>
 
-        <Filters
-        updateFilters={ this.updateFilters }
-        jobs={ this.state.jobs }
-        cleanUpCategoryData={ this.cleanUpCategoryData } />
-
-        { this.state.error ?
-          <p>{ this.state.error }</p>
-          :
-          <JobContainer jobs={ this.state.jobs } />
-        }
+        <div className='jobs'>
+          { this.state.error ?
+            <p>{ this.state.error }</p>
+            :
+            <JobContainer jobs={ this.state.jobs } />
+          }
+        </div>
+        <div id='clear'></div>
       </div>
     )
   }
