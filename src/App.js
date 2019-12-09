@@ -7,13 +7,11 @@ class App extends React.Component {
 
   state = {
     jobs: [],
-    searchTerms: {
-      title: '',
-      location: '',
-      company: '',
-      level: '',
-      categories: ''
-    },
+    title: '',
+    location: '',
+    company: '',
+    level: '',
+    categories: '',
     error: ''
   }
 
@@ -24,15 +22,23 @@ class App extends React.Component {
     .catch(err => this.setState( { error: err.message } ))
   }
 
+  updateSearchTerm = (title) => {
+    let filteredJobs = this.state.jobs.filter(job => {
+      return job.title.includes(title)
+    })
+    this.setState({ title: title, jobs: filteredJobs })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <b>the</b>muse
         </header>
-        <Search />
-        {this.state.error ?
-          <p>{this.state.error}</p>
+        <Search updateSearchTerm={ this.updateSearchTerm } />
+        There are {this.state.jobs.length} result(s).
+        { this.state.error ?
+          <p>{ this.state.error }</p>
           :
           <JobContainer jobs={ this.state.jobs } />
         }

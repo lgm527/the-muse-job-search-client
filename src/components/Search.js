@@ -10,8 +10,9 @@ export default class JobContainer extends Component {
     this.setState({ titleTerm: event.target.value })
   }
 
-  handleSearchSubmit = () => {
-    console.log('hi')
+  handleSearchSubmit = (event) => {
+    event.preventDefault()
+    this.props.updateSearchTerm(this.state.titleTerm)
   }
 
   render(){
@@ -23,7 +24,7 @@ export default class JobContainer extends Component {
       placeholder='Search Jobs by Title'
       onChange={ event => this.handleTitleTerm(event) }>
       </input>
-      <button onClick={ this.handleSearchSubmit }> Search </button>
+      <button onClick={ event => this.handleSearchSubmit(event) }> Search </button>
       </div>
     )
   }

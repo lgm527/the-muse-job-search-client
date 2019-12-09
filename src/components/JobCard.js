@@ -27,7 +27,7 @@ class JobCard extends React.Component {
         <b>{ company }</b> <br></br>
            { title } <br></br>
            { location }
-           { description }
+           { ReactHtmlParser(description) }
            { url }
            <br></br>
            <br></br>
