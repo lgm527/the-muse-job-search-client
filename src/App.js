@@ -49,12 +49,17 @@ class App extends React.Component {
     let filteredJobs = []
      termsArr.forEach((term) => {
       return this.state.jobs.filter(job => {
-        if (job[filter] === term) {
+        if (this.cleanUpCategoryData(job[filter]) === term) {
           filteredJobs.push(job);
         }
       })
     })
     this.setState({ jobs: filteredJobs, filter: termsArr })
+  }
+
+  cleanUpCategoryData = (category) => {
+    let cat = category.replace(/\W/g, '')
+    return cat.replace('name', '')
   }
 
   render() {
@@ -71,7 +76,8 @@ class App extends React.Component {
 
         <Filters
         updateFilters={ this.updateFilters }
-        jobs={ this.state.jobs } />
+        jobs={ this.state.jobs }
+        cleanUpCategoryData={ this.cleanUpCategoryData } />
 
         { this.state.error ?
           <p>{ this.state.error }</p>

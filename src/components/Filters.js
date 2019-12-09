@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import LevelFilters from './LevelFilters';
 import CompanyFilters from './CompanyFilters';
 import LocationFilters from './LocationFilters';
+import CategoriesFilters from './CategoriesFilters';
 
 export default class Filters extends Component {
 
@@ -26,6 +27,8 @@ export default class Filters extends Component {
       <CompanyFilters jobs={ this.props.jobs } handleFilters={ this.handleFilters } />
 
       <LocationFilters jobs={ this.props.jobs } handleFilters={ this.handleFilters } />
+
+      <CategoriesFilters jobs={ this.props.jobs } handleFilters={ this.handleFilters } cleanUpCategoryData={ this.props.cleanUpCategoryData } />
 
       </div>
     )
