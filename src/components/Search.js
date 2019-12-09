@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
-export default class JobContainer extends Component {
+export default class Search extends Component {
 
   state = {
     titleTerm: ''
@@ -15,7 +15,7 @@ export default class JobContainer extends Component {
     this.props.updateSearchTerm(this.state.titleTerm)
   }
 
-  render(){
+  render() {
     return(
       <div>
       <input type='text'
