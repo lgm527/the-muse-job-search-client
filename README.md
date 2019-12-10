@@ -12,6 +12,6 @@
 
   in terminal run npm start
 
-### Backend
+### Back-end
 
 https://github.com/lgm527/the-muse-job-search-api
