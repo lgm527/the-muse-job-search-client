@@ -1,4 +1,4 @@
-### The Muse Job Board
+# The Muse Job Board
 
 * Configuration
 
