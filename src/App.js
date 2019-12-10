@@ -40,7 +40,11 @@ class App extends React.Component {
 
   updateSearchTerm = (title) => {
     let searchJobs = this.state.jobs.filter(job => {
-      return job.title.includes(title)
+      let databaseTitle = job.title.toLowerCase();
+      let userInputTitle = title.toLowerCase();
+       if (databaseTitle.includes(userInputTitle)) {
+         return job;
+       }
     })
     this.setState({ title: title, jobs: searchJobs })
   }
@@ -84,9 +88,11 @@ class App extends React.Component {
 
         <div className='userInput'>
           <div id='searching'>
-          <Search updateSearchTerm={ this.updateSearchTerm } />
+          <Search
+          updateSearchTerm={ this.updateSearchTerm }
+          resetList={ this.resetList } />
           <p>There are { this.state.jobs ? this.state.jobs.length : 'none' } result(s).</p>
-          <button id='resetBtn' onClick={ () => this.resetList() }>Reset Search</button>
+
           </div>
 
           <div id='filtering'>

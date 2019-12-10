@@ -15,6 +15,11 @@ export default class Search extends Component {
     this.props.updateSearchTerm(this.state.titleTerm)
   }
 
+  handleReset = () => {
+    this.props.resetList();
+    this.setState({ titleTerm: '' })
+  }
+
   render() {
     return(
       <div>
@@ -25,6 +30,8 @@ export default class Search extends Component {
       onChange={ event => this.handleTitleTerm(event) }>
       </input>
       <button onClick={ event => this.handleSearchSubmit(event) }> Search </button>
+      <br></br><br></br>
+      <button id='resetBtn' onClick={ () => this.handleReset() }>Reset Search</button>
       </div>
     )
   }
