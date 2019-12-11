@@ -7,10 +7,21 @@
 .jobCard {
   margin: 1em;
   padding: 1em;
-  border: solid 5px gray;
+  border: 5px solid lightgray;
   border-radius: .5em;
 }
 
 #details {
   float: right;
+  color: white;
+  background-color: #3852d4;
+  border-radius: .5em;
+}
+
+#details:focus {
+  outline: none;
+}
+
+h2 {
+  margin-left: .8em;
 }

@@ -83,7 +83,7 @@ class App extends React.Component {
       <div className="App">
 
         <header className="App-header">
-          <span id='logo'><b>the</b>muse</span>
+          <span id='logo'><span id='the'><b>the</b></span>muse</span>
         </header>
 
         <div className='userInput'>

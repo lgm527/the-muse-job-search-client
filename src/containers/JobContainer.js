@@ -8,6 +8,7 @@ export default class JobContainer extends Component {
     const allJobs = this.props.jobs.map((job) => <JobCard key={job.id} job={job} />)
     return(
       <div className='jobContainer'>
+      <h2>Browse Jobs</h2>
       { allJobs }
       </div>
     )

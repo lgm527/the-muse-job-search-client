@@ -27,8 +27,6 @@ export default class Filters extends Component {
     return(
       <div className='filters'>
 
-      <h3>Filters:</h3>
-
       <LevelFilters handleFilters={ this.handleFilters } />
 
       <CompanyFilters

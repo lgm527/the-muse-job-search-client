@@ -25,20 +25,21 @@ class JobCard extends React.Component {
       <button
       onClick={ () => this.handleDetailToggle() }
       id='details'>
-      { this.state.showDetails ? 'Show Less' : 'Show More' }</button>
+      { this.state.showDetails ? 'Show Less' : 'Show More' }
+      </button>
       {
         this.state.showDetails ?
         <div>
         <b>{ company }</b> <br></br>
-           { title } <br></br>
+           <i>{ title }</i> <br></br>
            { location }
            { ReactHtmlParser(description) }
-           { url }
+           <a href={ url }>Apply Now</a>
         </div>
         :
         <div>
         <b>{ company }</b> <br></br>
-           { title } <br></br>
+           <i>{ title }</i> <br></br>
            { location }
            { ReactHtmlParser(shortDescription) }
         </div>

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../styles/Search.css';
 
 export default class Search extends Component {
 
@@ -25,6 +26,7 @@ export default class Search extends Component {
       <div>
       <input type='text'
       name='titleTerm'
+      id='titleTerm'
       value={ this.state.titleTerm }
       placeholder='Search Jobs by Title'
       onChange={ event => this.handleTitleTerm(event) }>
