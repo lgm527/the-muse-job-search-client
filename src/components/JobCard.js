@@ -34,7 +34,7 @@ class JobCard extends React.Component {
            <i>{ title }</i> <br></br>
            { location }
            { ReactHtmlParser(description) }
-           <a href={ url }>Apply Now</a>
+           <a href={ url }><button>Apply Now →</button></a>
         </div>
         :
         <div>
